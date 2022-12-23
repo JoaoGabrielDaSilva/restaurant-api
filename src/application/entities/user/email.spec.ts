@@ -1,4 +1,3 @@
-import { Role, User } from './user';
 import { faker } from '@faker-js/faker';
 import { Email } from './email';
 

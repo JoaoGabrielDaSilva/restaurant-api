@@ -1,20 +1,14 @@
 import { Replace } from '@application/helpers';
 import { randomUUID } from 'node:crypto';
 import { Email } from './email';
-import { Password } from './password';
-
-export enum Role {
-  ADMIN,
-  CUSTOMER,
-}
 
 export interface UserProps {
   name: string;
   email: Email;
-  role: Role;
+  role: string;
   createdAt?: Date;
   updatedAt?: Date | null;
-  password: Password;
+  password: string;
 }
 
 export class User {
@@ -57,7 +51,7 @@ export class User {
   public set createdAt(createdAt: Date) {
     this.props.createdAt = createdAt;
   }
-  public get role(): Role {
+  public get role(): string {
     return this.props.role;
   }
 
